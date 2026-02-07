@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dalia Carny-Baruch | Artist Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="body">
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo" id="logo">Dalia Carny</div>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showPage('home')" class="active" data-page="home">
+                    <span class="en">Home</span><span class="he" style="display:none">בית</span>
+                </a></li>
+                <li><a href="#" onclick="showPage('gallery')" data-page="gallery">
+                    <span class="en">Gallery</span><span class="he" style="display:none">גלריה</span>
+                </a></li>
+                <li><a href="#" onclick="showPage('biography')" data-page="biography">
+                    <span class="en">Biography</span><span class="he" style="display:none">קורות חיים</span>
+                </a></li>
+            </ul>
+            <button class="lang-toggle" onclick="toggleLanguage()">
+                <span class="en">עברית</span><span class="he" style="display:none">English</span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 id="artist-name">Dalia Carny-Baruch</h1>
+        <p class="subtitle" id="artist-title">Artist & Educator</p>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Page -->
+        <div id="page-home" class="page active">
+            <section>
+                <h2 class="section-title">
+                    <span class="en">Welcome</span><span class="he" style="display:none">ברוכים הבאים</span>
+                </h2>
+                <p style="font-size: 1.2rem; max-width: 800px; margin-bottom: 2rem;">
+                    <span class="en">
+                        Welcome to the online portfolio of Dalia Carny-Baruch, featuring paintings, 
+                        sculptures, and mixed media works. Explore the gallery to view the complete collection.
+                    </span>
+                    <span class="he" style="display:none">
+                        ברוכים הבאים לתיק העבודות המקוון של דליה קרני-ברוך, הכולל ציורים, 
+                        פסלים ועבודות מדיה מעורבת. גלשו בגלריה לצפייה באוסף המלא.
+                    </span>
+                </p>
+                <h3 class="section-title">
+                    <span class="en">Featured Works</span><span class="he" style="display:none">עבודות נבחרות</span>
+                </h3>
+                <div class="gallery-grid" id="featured-gallery"></div>
+            </section>
+        </div>
+
+        <!-- Gallery Page -->
+        <div id="page-gallery" class="page">
+            <section>
+                <h2 class="section-title">
+                    <span class="en">Gallery</span><span class="he" style="display:none">גלריה</span>
+                </h2>
+                
+                <div class="tabs">
+                    <button class="tab-btn active" onclick="showTab('paintings')">
+                        <span class="en">Paintings</span><span class="he" style="display:none">ציורים</span>
+                    </button>
+                    <button class="tab-btn" onclick="showTab('sculptures')">
+                        <span class="en">Sculptures</span><span class="he" style="display:none">פסלים</span>
+                    </button>
+                </div>
+
+                <div id="tab-paintings" class="tab-content active">
+                    <div class="gallery-grid" id="paintings-gallery"></div>
+                </div>
+
+                <div id="tab-sculptures" class="tab-content">
+                    <div class="gallery-grid" id="sculptures-gallery"></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Biography Page -->
+        <div id="page-biography" class="page">
+            <section>
+                <h2 class="section-title">
+                    <span class="en">Biography</span><span class="he" style="display:none">קורות חיים</span>
+                </h2>
+                <p class="bio-intro" id="bio-intro"></p>
+
+                <div class="bio-section">
+                    <h3><span class="en">Education</span><span class="he" style="display:none">השכלה</span></h3>
+                    <ul id="education-list"></ul>
+                </div>
+
+                <div class="bio-section">
+                    <h3><span class="en">Exhibitions</span><span class="he" style="display:none">תערוכות</span></h3>
+                    <ul id="exhibitions-list"></ul>
+                </div>
+
+                <div class="bio-section">
+                    <h3><span class="en">Community projects</span><span class="he" style="display:none">פרויקטים קהילתיים</span></h3>
+                    <ul id="community-projects-list"></ul>
+                </div>
+
+                <div class="bio-section">
+                    <h3><span class="en">Projects (art department)</span><span class="he" style="display:none">פרויקטים (מגמת האמנות)</span></h3>
+                    <ul id="projects-list"></ul>
+                </div>
+
+                <div class="bio-section">
+                    <h3><span class="en">Establishing learning centers</span><span class="he" style="display:none">הקמת מרכזי למידה</span></h3>
+                    <ul id="learning-centers-list"></ul>
+                </div>
+
+                <div class="bio-section">
+                    <h3><span class="en">Learning kits and curriculums</span><span class="he" style="display:none">ערכות למידה ותוכניות</span></h3>
+                    <ul id="learning-kits-list"></ul>
+                </div>
+
+                <div class="bio-section">
+                    <h3><span class="en">Specialization</span><span class="he" style="display:none">התמחות</span></h3>
+                    <ul id="specialization-list"></ul>
+                </div>
+
+                <div class="bio-section">
+                    <h3><span class="en">Awards</span><span class="he" style="display:none">פרסים</span></h3>
+                    <ul id="awards-list"></ul>
+                </div>
+
+                <div class="bio-section">
+                    <h3><span class="en">Contact</span><span class="he" style="display:none">יצירת קשר</span></h3>
+                    <p id="contact-info"></p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close">&times;</button>
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <div class="lightbox-image-wrap" id="lightbox-image">
+                <span class="placeholder-image">🎨</span>
+            </div>
+            <div class="lightbox-info" id="lightbox-info"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Dalia Carny-Baruch. 
+            <span class="en">All rights reserved.</span>
+            <span class="he" style="display:none">כל הזכויות שמורות.</span>
+        </p>
+    </footer>
+
+    <!-- Embedded data so gallery and biography work when opened as file (no server) -->
+    <script type="application/json" id="artworks-embedded">{"artist":{"name_en":"Dalia Carny-Baruch","name_he":"דליה קרני-ברוך","title_en":"Artist & Educator","title_he":"אמנית ומחנכת","contact":{"email":"","phone":"972-9-7493938","location_en":"Kokhav-Yair, Israel","location_he":"כוכב יאיר, ישראל"}},"paintings":[{"id":1,"image":"photos/1a.jpg","dimensions":"80x100","medium_en":"acrylic on canvas","medium_he":"אקריליק על קנבס"},{"id":2,"image":"photos/2a.jpg","dimensions":"80x100","medium_en":"acrylic on canvas","medium_he":"אקריליק על קנבס"},{"id":3,"image":"photos/3a.jpg","dimensions":"100x100","medium_en":"acrylic on canvas","medium_he":"אקריליק על קנבס"},{"id":4,"image":"photos/4a.jpg","dimensions":"100x80","medium_en":"acrylic on canvas","medium_he":"אקריליק על קנבס"},{"id":5,"image":"photos/5a.jpg","dimensions":"80x120","medium_en":"acrylic on canvas","medium_he":"אקריליק על קנבס"},{"id":6,"image":"photos/6a.jpg","dimensions":"70x80","medium_en":"acrylic on canvas","medium_he":"אקריליק על קנבס"},{"id":7,"image":"photos/7a.jpg","dimensions":"200x200","medium_en":"acrylic on panel","medium_he":"אקריליק על לוח"},{"id":8,"image":"photos/8a.jpg","dimensions":"50x70","medium_en":"assemblage, oil and canvas","medium_he":"אסמבלאז', שמן וקנבס"},{"id":9,"image":"photos/9a.jpg","dimensions":"210x150","medium_en":"acrylic on canvas","medium_he":"אקריליק על קנבס"},{"id":10,"image":"photos/10a.jpg","dimensions":"80x100","medium_en":"acrylic on canvas","medium_he":"אקריליק על קנבס"},{"id":11,"image":"photos/11a.jpg","dimensions":"65x85","medium_en":"acrylic on canvas","medium_he":"אקריליק על קנבס"},{"id":12,"image":"photos/12a.jpg","dimensions":"80x120","medium_en":"acrylic on canvas","medium_he":"אקריליק על קנבס"},{"id":13,"image":"photos/13a.jpg","dimensions":"80x100","medium_en":"acrylic on canvas","medium_he":"אקריליק על קנבס"},{"id":14,"image":"photos/14a.jpg","dimensions":"70x90","medium_en":"acrylic on canvas","medium_he":"אקריליק על קנבס"},{"id":15,"image":"photos/15a.jpg","dimensions":"70x100","medium_en":"acrylic on panel","medium_he":"אקריליק על לוח"},{"id":16,"image":"photos/16a.jpg","dimensions":"100x120","medium_en":"acrylic on panel","medium_he":"אקריליק על לוח"},{"id":17,"image":"photos/17a.jpg","dimensions":"80x120","medium_en":"acrylic on canvas","medium_he":"אקריליק על קנבס"},{"id":18,"image":"photos/18a.jpg","dimensions":"80x120","medium_en":"acrylic on canvas","medium_he":"אקריליק על קנבס"},{"id":19,"image":"photos/19a.jpg","dimensions":"130x97","medium_en":"acrylic on canvas","medium_he":"אקריליק על קנבס"},{"id":20,"image":"photos/20a.jpg","dimensions":"70x40","medium_en":"mixed technique","medium_he":"טכניקה מעורבת"},{"id":21,"image":"photos/21a.jpg","dimensions":"100x120","medium_en":"acrylic on panel","medium_he":"אקריליק על לוח"},{"id":22,"image":"photos/22a.jpg","dimensions":"50x35","medium_en":"collage with photograph and mixed technique","medium_he":"קולאז' עם צילום וטכניקה מעורבת"},{"id":23,"image":"photos/23a.jpg","dimensions":"35x50","medium_en":"collage with photograph and mixed technique","medium_he":"קולאז' עם צילום וטכניקה מעורבת"},{"id":24,"image":"photos/24a.jpg","dimensions":"50x35","medium_en":"collage with photograph and mixed technique","medium_he":"קולאז' עם צילום וטכניקה מעורבת"},{"id":25,"image":"photos/25a.jpg","dimensions":"35x50","medium_en":"collage with photograph and mixed technique","medium_he":"קולאז' עם צילום וטכניקה מעורבת"},{"id":26,"image":"photos/31a.jpg","dimensions":"100x100","medium_en":"acrylic on canvas","medium_he":"אקריליק על קנבס"},{"id":27,"image":"photos/32a.jpg","dimensions":"50x70","medium_en":"acrylic on canvas","medium_he":"אקריליק על קנבס"},{"id":28,"image":"photos/33a.jpg","dimensions":"70x90","medium_en":"acrylic on canvas","medium_he":"אקריליק על קנבס"},{"id":29,"image":"photos/34a.jpg","dimensions":"130x96","medium_en":"acrylic on canvas","medium_he":"אקריליק על קנבס"},{"id":30,"image":"photos/35a.jpg","dimensions":"60x80","medium_en":"acrylic on canvas","medium_he":"אקריליק על קנבס"},{"id":31,"image":"photos/36a.jpg","dimensions":"160x100","medium_en":"acrylic on canvas","medium_he":"אקריליק על קנבס"},{"id":32,"image":"photos/37a.jpg","dimensions":"65x85","medium_en":"acrylic on canvas","medium_he":"אקריליק על קנבס"},{"id":33,"image":"photos/38a.jpg","dimensions":"80x120","medium_en":"acrylic on canvas","medium_he":"אקריליק על קנבס"},{"id":34,"image":"photos/30a.jpg","dimensions":"50x120","medium_en":"pastel on panel","medium_he":"פסטל על לוח"},{"id":35,"image":"photos/40a.jpg","dimensions":"30x20","medium_en":"oil on panel","medium_he":"שמן על לוח"},{"id":36,"image":"photos/41a.jpg","dimensions":"90x120","medium_en":"acrylic on canvas","medium_he":"אקריליק על קנבס"},{"id":37,"image":"photos/42a.jpg","dimensions":"57x47","medium_en":"acrylic on canvas","medium_he":"אקריליק על קנבס"},{"id":38,"image":"photos/39a.jpg","dimensions":"50x67","medium_en":"acrylic on canvas","medium_he":"אקריליק על קנבס"}],"sculptures":[{"id":1,"image":"photos/26a.jpg","dimensions":"25x13x18","medium_en":"clay and wood","medium_he":"חימר ועץ"},{"id":2,"image":"photos/27a.jpg","dimensions":"38x30x20","medium_en":"clay and wood","medium_he":"חימר ועץ"},{"id":3,"image":"photos/28a.jpg","dimensions":"40x30x25","medium_en":"clay and metal","medium_he":"חימר ומתכת"},{"id":4,"image":"photos/29a.jpg","dimensions":"40x25x30","medium_en":"clay, metal and wood","medium_he":"חימר, מתכת ועץ"}],"biography":{"intro_en":"Dalia Carny-Baruch – Head of the art department, MOR Metro-West Raanana high school. P.O.B. 466 Kokhav-Yair. Telephone: 972-9-7493938","intro_he":"דליה קרני-ברוך – ראש מגמת האמנות תיכון מור מטרו-וסט רעננה. ת.ד. 466 כוכב-יאיר. טל' 09-7493938","education_en":["M.A. in the History of Art – Tel Aviv University, July 1998","B.A. in Education, specializations: literature and art, Beit Berl, 1993","Museology, Tel Aviv University, 1997","Graduate, 'Hamidrasha' for art teachers, 1980"],"education_he":["תואר שני בתולדות האמנות – אוניברסיטת תל אביב, יולי 1998","תואר ראשון בחינוך (ספרות ואמנות), בית ברל, 1993","מוזיאולוגיה, אוניברסיטת תל אביב, 1997","בוגרת 'המדרשה' למורים לאמנות, 1980"],"exhibitions_en":["\"Tzironet\" – Bat-Yam's Promenade, June 2007","\"Olive leaf\" – Holon, January 2003","\"Genesis\" – Kokhav Yair & Kadima community centers, May 2002","\"Feminine Statement\" – Kokhav Yair Gallery, May 2000","\"I remember, friend\" – two years to the assassination of Yitzhak Rabin, Kokhav-Yair Gallery, 1997","\"Homage to the Screamers and impressions from there\" – 1996 Metro-West high school","\"Memoirs of a journey\" – Villa Clementine, Wiesbaden, Germany, 1995","\"Illustrations of YL\"G\" – 500 years to the expulsion of the Jewish community in Spain, Yemima House, Beit Berl, 1992","\"The Holocaust mirrored in art\" – Kokhav-Yair, 1991","Memorial room \"Holocaust and Heroism\" – Kokhav-Yair, 1989","\"The transitions of the Shequel\" – 40 years to the State of Israel, Kokhav-Yair community school, 1988"],"exhibitions_he":["\"צירונת\" – טיילת בת ים, יוני 2007","\"עלה זית\" – חולון, ינואר 2003","\"בראשית\" – מתנ\"ס כוכב יאיר וקדימה, מאי 2002","\"הצהרה נשית\" – גלריית כוכב יאיר, מאי 2000","\"זוכרת, חבר\" – שנתיים לרצח יצחק רבין, גלריית כוכב יאיר, 1997","\"זיכרונות ממסע\" – וילה קלמנטינה, ויסבאדן, גרמניה, 1995","\"השואה בראי האמנות\" – כוכב יאיר, 1991","חדר זיכרון \"לשואה ולגבורה\" – כוכב יאיר, 1989","\"גלגולי השקל\" – 40 שנה למדינת ישראל, בית הספר הקהילתי כוכב יאיר, 1988"],"community_projects_en":["A sculpture garden in the Kokhav-Yair community school yard","Graffiti tunnel – graffiti in the bicycle tunnel in Kokhav-Yair, by the youth of Kokhav-Yair","Joint activities of pupils of Um el-Fahm and Kokhav Yair community school – prevention of violence and preserving the planet; joint traveling exhibition in Kokhav-Yair and Um el-Fahm"],"community_projects_he":["גן פסלים בחצר בית הספר הקהילתי כוכב יאיר","מנהרת גרפיטי – גרפיטי במנהרת האופניים בכוכב יאיר, עם נוער כוכב יאיר","פעילויות משותפות עם תלמידי אום אל-פחם וכוכב יאיר – מניעת אלימות ושמירה על כדור הארץ; תערוכה נודדת משותפת"],"projects_en":["Establishment of the MOR gallery – school gallery for the 'artist is a curator to an artist' project","Designing decor for the music department's operettas (Mofet and Yad Lebanim Halls, Raanana)","'Ad-Lo-Yada' carnival in Raanana","Curator of the art department exhibition – Yad Lebanim Hall, Raanana, 1997","Won a grant from the Encouragement of Educational Enterprises Foundation for the 'artist is a curator to an artist' project"],"projects_he":["הקמת גלריית 'מור' – גלריית בית ספר לפרויקט 'אמן אוצר לאמן'","עיצוב תפאורה לאופרטות של מגמת המוזיקה (אולמות 'מופת' ו'יד לבנים', רעננה)","קרנבל 'עד-לא-ידע' ברעננה","אוצרת תערוכת מגמת האמנות – אולם יד לבנים, רעננה, 1997","זכייה במענק מקרן עידוד מיזמי חינוך לפרויקט 'אמן אוצר לאמן'"],"learning_centers_en":["\"Art in the age of technology\" – trends in modern art, Kokhav-Yair community school","\"Time tunnel\" – development of art as chronology, Hakfar Hayarok high school"],"learning_centers_he":["\"אמנות בעידן הטכנולוגיה\" – מגמות באמנות מודרנית, בית הספר הקהילתי כוכב יאיר","\"מנהרת הזמן\" – התפתחות האמנות כרונולוגית, תיכון הכפר הירוק"],"learning_kits_en":["\"A time for language\" – Hebrew language year","\"Law and Justice as expressed by Daumier\"","\"Immigration and absorption mirrored by art\"","\"Environmentalism\"","\"The Holocaust mirrored by art\" – learning unit on the development of the Nazi racist idea and its implementation","\"Longing for Zion\" – Zionism mirrored by art","Teaching plans for use with art-related multimedia CDs"],"learning_kits_he":["\"עת ללשון\" – שנת הלשון העברית","\"חוק ומשפט באמנות דומייה\"","\"עלייה וקליטה בראי האמנות\"","\"סביבתנות\"","\"השואה בראי האמנות\" – יחידת לימוד על התפתחות רעיון הגזע הנאצי ויישומו","\"כיסופים לציון\" – הציונות בראי האמנות","כתיבת תכניות לימוד לשימוש בתקליטורי מולטימדיה באמנות"],"specialization_en":["Writing and creative expression","Design of the teaching environment","The computer in the service of the school and as a creative tool in the 20th century","Museology"],"specialization_he":["כתיבה ויצירה","עיצוב סביבת ההוראה","המחשב בשירות בית הספר ויצירה במאה ה-20","מוזיאולוגיה"],"awards_en":["Winner of the 2006 Recanati-Chais-Rashi Award for the Entrepreneur Teacher"],"awards_he":["זוכת פרס רקנאטי-חייס-רש\"י למורה היזם לשנת 2006"]}}</script>
+
+    <script>
+        // ========================================
+        // Data & State
+        // ========================================
+        let artworksData = null;
+        let currentLang = 'en';
+
+        // ========================================
+        // Load Data from JSON
+        // ========================================
+        async function loadData() {
+            try {
+                const response = await fetch('artworks.json');
+                if (!response.ok) throw new Error(response.statusText);
+                artworksData = await response.json();
+                renderGalleries();
+                renderBiography();
+                updateArtistInfo();
+                return;
+            } catch (error) {
+                console.warn('Could not load artworks.json (normal when opening as file://). Using embedded data.', error);
+            }
+            // When fetch fails (e.g. file:// or no server), use embedded data
+            const el = document.getElementById('artworks-embedded');
+            if (el && el.textContent) {
+                try {
+                    artworksData = JSON.parse(el.textContent.trim());
+                    renderGalleries();
+                    renderBiography();
+                    updateArtistInfo();
+                    return;
+                } catch (e) {
+                    console.error('Embedded data parse error', e);
+                }
+            }
+            useFallbackData();
+        }
+
+        function useFallbackData() {
+            // Embedded data for offline demo
+            artworksData = {
+                artist: {
+                    name_en: "Dalia Carny-Baruch",
+                    name_he: "דליה קרני-ברוך",
+                    title_en: "Artist & Educator",
+                    title_he: "אמנית ומחנכת",
+                    contact: {
+                        phone: "972-9-7493938",
+                        location_en: "Kokhav-Yair, Israel",
+                        location_he: "כוכב יאיר, ישראל"
+                    }
+                },
+                paintings: [
+                    { id: 1, dimensions: "80x100", medium_en: "acrylic on canvas", medium_he: "אקריליק על קנבס" },
+                    { id: 2, dimensions: "100x100", medium_en: "acrylic on canvas", medium_he: "אקריליק על קנבס" },
+                    { id: 3, dimensions: "200x200", medium_en: "acrylic on panel", medium_he: "אקריליק על לוח" },
+                    { id: 4, dimensions: "50x70", medium_en: "assemblage, oil and canvas", medium_he: "אסמבלאז', שמן וקנבס" },
+                    { id: 5, dimensions: "70x40", medium_en: "mixed technique", medium_he: "טכניקה מעורבת" },
+                    { id: 6, dimensions: "50x35", medium_en: "collage with photograph", medium_he: "קולאז' עם צילום" }
+                ],
+                sculptures: [
+                    { id: 1, dimensions: "25x13x18", medium_en: "clay and wood", medium_he: "חימר ועץ" },
+                    { id: 2, dimensions: "38x30x20", medium_en: "clay and wood", medium_he: "חימר ועץ" },
+                    { id: 3, dimensions: "40x30x25", medium_en: "clay and metal", medium_he: "חימר ומתכת" },
+                    { id: 4, dimensions: "40x25x30", medium_en: "clay, metal and wood", medium_he: "חימר, מתכת ועץ" }
+                ],
+                biography: {
+                    education_en: [
+                        "Graduate, 'Hamidrasha' for art teachers, 1980",
+                        "M.A. in History of Art, Tel Aviv University, 1998"
+                    ],
+                    education_he: [
+                        "בוגרת 'המדרשה' למורים לאמנות, 1980",
+                        "תואר שני בתולדות האמנות, אוניברסיטת תל אביב, 1998"
+                    ],
+                    exhibitions_en: [
+                        "\"Tzironet\" - Bat-Yam's Promenade, June 2007",
+                        "\"Genesis\" - Kokhav Yair, May 2002"
+                    ],
+                    exhibitions_he: [
+                        "\"צירונת\" - טיילת בת ים, יוני 2007",
+                        "\"בראשית\" - כוכב יאיר, מאי 2002"
+                    ],
+                    awards_en: ["Winner of the 2006 Recanati-Chais-Rashi Award"],
+                    awards_he: ["זוכת פרס רקנאטי-חייס-רש\"י לשנת 2006"]
+                }
+            };
+            renderGalleries();
+            renderBiography();
+            updateArtistInfo();
+        }
+
+        // ========================================
+        // Render Functions
+        // ========================================
+        function createArtworkCard(item, type = 'painting') {
+            const medium = currentLang === 'en' ? item.medium_en : item.medium_he;
+            const card = document.createElement('div');
+            card.className = 'artwork-card';
+            card.onclick = () => openLightbox(item);
+            const imgSrc = item.image || '';
+            const imgContent = imgSrc
+                ? `<img src="${imgSrc}" alt="" loading="lazy">`
+                : '<div class="placeholder-image">🎨</div>';
+            card.innerHTML = `
+                <div class="artwork-image">${imgContent}</div>
+                <div class="artwork-info">
+                    <div class="artwork-dimensions">${item.dimensions} cm</div>
+                    <div class="artwork-medium">${medium}</div>
+                </div>
+            `;
+            return card;
+        }
+
+        function renderGalleries() {
+            if (!artworksData) return;
+
+            // Featured gallery (first 6 paintings)
+            const featuredGallery = document.getElementById('featured-gallery');
+            featuredGallery.innerHTML = '';
+            artworksData.paintings.slice(0, 6).forEach(item => {
+                featuredGallery.appendChild(createArtworkCard(item));
+            });
+
+            // Full paintings gallery
+            const paintingsGallery = document.getElementById('paintings-gallery');
+            paintingsGallery.innerHTML = '';
+            artworksData.paintings.forEach(item => {
+                paintingsGallery.appendChild(createArtworkCard(item));
+            });
+
+            // Sculptures gallery
+            const sculpturesGallery = document.getElementById('sculptures-gallery');
+            sculpturesGallery.innerHTML = '';
+            artworksData.sculptures.forEach(item => {
+                sculpturesGallery.appendChild(createArtworkCard(item, 'sculpture'));
+            });
+        }
+
+        function renderBiography() {
+            if (!artworksData) return;
+
+            const bio = artworksData.biography;
+            const suffix = currentLang === 'en' ? '_en' : '_he';
+
+            // Intro
+            const introKey = 'intro' + suffix;
+            const introEl = document.getElementById('bio-intro');
+            if (bio[introKey]) introEl.textContent = bio[introKey];
+            else introEl.textContent = '';
+
+            // Education
+            const eduList = document.getElementById('education-list');
+            eduList.innerHTML = (bio['education' + suffix] || []).map(item => `<li>${item}</li>`).join('');
+
+            // Exhibitions
+            const exhList = document.getElementById('exhibitions-list');
+            exhList.innerHTML = (bio['exhibitions' + suffix] || []).map(item => `<li>${item}</li>`).join('');
+
+            // Community projects, projects, learning centers, learning kits, specialization
+            const listIds = ['community_projects', 'projects', 'learning_centers', 'learning_kits', 'specialization'];
+            listIds.forEach(key => {
+                const list = document.getElementById(key.replace(/_/g, '-') + '-list');
+                if (!list) return;
+                const arr = bio[key + suffix];
+                list.innerHTML = (arr || []).map(item => `<li>${item}</li>`).join('');
+            });
+
+            // Awards
+            const awardsList = document.getElementById('awards-list');
+            awardsList.innerHTML = (bio['awards' + suffix] || []).map(item => `<li>${item}</li>`).join('');
+
+            // Contact
+            const contact = artworksData.artist.contact;
+            const location = currentLang === 'en' ? contact.location_en : contact.location_he;
+            document.getElementById('contact-info').innerHTML = `
+                📍 ${location}<br>
+                📞 ${contact.phone}
+            `;
+        }
+
+        function updateArtistInfo() {
+            if (!artworksData) return;
+            const artist = artworksData.artist;
+            document.getElementById('artist-name').textContent = 
+                currentLang === 'en' ? artist.name_en : artist.name_he;
+            document.getElementById('artist-title').textContent = 
+                currentLang === 'en' ? artist.title_en : artist.title_he;
+        }
+
+        // ========================================
+        // Language Toggle
+        // ========================================
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'he' : 'en';
+            
+            // Toggle RTL
+            document.body.classList.toggle('rtl', currentLang === 'he');
+            document.documentElement.lang = currentLang;
+
+            // Toggle text visibility
+            document.querySelectorAll('.en').forEach(el => {
+                el.style.display = currentLang === 'en' ? '' : 'none';
+            });
+            document.querySelectorAll('.he').forEach(el => {
+                el.style.display = currentLang === 'he' ? '' : 'none';
+            });
+
+            // Re-render dynamic content
+            renderGalleries();
+            renderBiography();
+            updateArtistInfo();
+        }
+
+        // ========================================
+        // Page Navigation
+        // ========================================
+        function showPage(pageName) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById('page-' + pageName).classList.add('active');
+
+            // Update nav links
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.dataset.page === pageName) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // ========================================
+        // Tab Navigation
+        // ========================================
+        function showTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show selected tab
+            document.getElementById('tab-' + tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // ========================================
+        // Lightbox
+        // ========================================
+        function openLightbox(item) {
+            const medium = currentLang === 'en' ? item.medium_en : item.medium_he;
+            const wrap = document.getElementById('lightbox-image');
+            if (item.image) {
+                wrap.innerHTML = `<img src="${item.image}" alt="">`;
+            } else {
+                wrap.innerHTML = '<span class="placeholder-image">🎨</span>';
+            }
+            document.getElementById('lightbox-info').innerHTML = `
+                <strong>${item.dimensions} cm</strong><br>
+                ${medium}
+            `;
+            document.getElementById('lightbox').classList.add('active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
+        // ========================================
+        // Initialize
+        // ========================================
+        document.addEventListener('DOMContentLoaded', loadData);
+    </script>
+
+</body>
+</html>
